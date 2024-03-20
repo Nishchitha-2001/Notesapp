@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        
+        
+        * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f0f0f0; 
+}
+
+.container {
+    background: linear-gradient(135deg,lightpink, #cf9aff, #95c0ff);
+    padding: 20px; 
+}
+
+.xyz {
+    text-align: center; 
+}
+
+form {
+    margin-top: 20px; 
+}
+
+h4 {
+    margin-bottom: 5px; 
+}
+
+textarea {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+}
+
+#btn {
+    background-color: #4caf50; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#btn:hover {
+    background-color: #45a049; 
+}
+
+table {
+    width: 100%;
+    margin-top: 20px; 
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #4caf50; 
+    color: white;
+}
+button {
+    background-color: green; 
+    color: #fff;
+    padding: 8px 16px; 
+    border: none; 
+    cursor: pointer;
+    margin-right: 10px; 
+}
+ </style>
+    
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="xyz"><h1><script>
+            document.write("Welcome... ");document.write(localStorage.getItem('name'))
+        </script></h1></div>
+        <div>
+            <form id ="form" action="">
+                <h4>Title :</h4>
+                   <textarea rows="4" cols="15" id="title" name="title"></textarea><br><br>
+                 <h4>Description :</h4>
+                <textarea rows="10" cols="15" id="desc" name="desc" place="description"></textarea><br><br><br>
+                    <input type="button" value="SUBMIT" id="btn" onclick="Submit()">
+            </form>
+            <br>
+            <br>
+            <table border="black 2px" id="table" cellspacing='9' cellpadding='9' >
+                <tr>
+                    <td>Title</td>
+                    <td>Description</td>
+                    <td>Action</td>
+                </tr>
+            </table><br><br>
+            <button><a style="color: #fff;" href="home.html">Logout</a></button>
+        </div>
+
+    <script src="notes.js">
+        
+    </script>
+</body>
+</html>

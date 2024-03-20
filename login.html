@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-image: url(static/images/bg2.jpg);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 300px;
+  margin: 100px auto;
+  background-color: rgba(255,255,255, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+  <script src="script.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Login</h1>
+    <form id="loginForm">
+       
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <br>
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="password" required>
+      <br>
+      <button type="button" onclick="login()"><a href="displaynotes.html">Login</a></button>
+    </form>
+
+    <p>Don't have an account? <a href="home.html">Register</a></p>
+  </div>
+<script>
+function login() {
+    let email=document.getElementById("email").value;
+    let password=document.getElementById("password").value;
+    let user_record=new Array();
+    user_record=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+    if (user_record.some((v)=>{return v.email==email && v.password==password})){
+    alert("Login Sucess")
+    let current_user=user_record.filter((v)=>{return v.email==email && v.password==password})[0]
+    localStorage.setItem("name",current_user.name)
+    localStorage.setItem("email",current_user.email)
+    window.location.href="displaynotes.html";
+}
+    else{
+        alert("If you are new user please register or May be Incorrect password or login")
+    }
+    }
+</script>
+  
+</body>
+</html>
